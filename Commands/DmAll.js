@@ -5,7 +5,7 @@ module.exports = {
         if (!args[0]) return message.channel.send("Veuillez entrer un message à envoyer.");
 
         const users = client.users.cache.filter(user => user.id !== client.user.id);
-        const delay = 1000;
+        const delay = 3000;
         const messageContent = args.join(" ");
 
         const sendMessages = users.map((user, index) => {

@@ -14,9 +14,10 @@ function loadCommands() {
     }
 }
 client.on('ready', async () => {
+    loadCommands()
     console.log(`Connecté en tant que ${client.user.username}`);
     client.user.setActivity(conf.Statuts.Name, { type: conf.Statuts.Activity });
-    loadCommands()
+
 })
 
 client.on('messageCreate', message => {
@@ -39,7 +40,9 @@ client.on('messageCreate', message => {
     const command = client.commands.get(commandName);
 
     try {
-        command.execute(client,message, args);
+        command.execute(client,message, args).then(
+            message.delete()
+        );
     } catch (error) {
         console.error(error);
         message.reply('Il y a eu une erreur en exécutant cette commande.');

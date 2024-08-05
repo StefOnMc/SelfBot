@@ -7,7 +7,7 @@ module.exports = {
     async execute(client,message, args) {
         try {
             const url = 'https://www.pointdevente.parionssport.fdj.fr'; // URL correcte pour les matchs
-            const response = await axios.get(url);
+            const response =  await axios.get(url);
 
             const $ = cheerio.load(response.data);
             let matches = [];

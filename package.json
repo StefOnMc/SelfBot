@@ -14,6 +14,7 @@
     "cheerio": "^1.0.0-rc.12",
     "discord.js-selfbot-v13": "^3.3.0",
     "fs": "^0.0.1-security",
+    "libquery": "^1.0.2",
     "minecraft-server-util": "^5.4.4",
     "node-fetch": "^3.3.2"
   }
